@@ -87,7 +87,7 @@ This database contains 34 attributes, 33 of which are linear valued and one of t
        6             pityriasis rubra pilaris     20
 
 
-#### Dip Not: olması gereken örnek sayısı ile veri setinideki hastalık sınıfını karşılaştırınca eşleşmelerin yanlış olduğu farkedilmiştir.
+Dip Not: olması gereken örnek sayısı ile veri setinideki hastalık sınıfını karşılaştırınca eşleşmelerin yanlış olduğu farkedilmiştir.
 Örnek sayısına göre yeni eşleşmeler 
 + 1= pityriasis rubra pilaris,
 + 2=cronic dermatitis,
