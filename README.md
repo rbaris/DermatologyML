@@ -79,7 +79,7 @@ This database contains 34 attributes, 33 of which are linear valued and one of t
        Database:  Dermatology
        
        Class code:   Class:                  Number of instances:
-       1             psoriasis			              112
+       1             psoriasis			     112
        2             seboreic dermatitis          61
        3             lichen planus                72
        4             pityriasis rosea             49
@@ -89,9 +89,9 @@ This database contains 34 attributes, 33 of which are linear valued and one of t
 
 Dip not: olması gereken örnek sayısı ile veri setinideki hastalık sınıfını karşılaştırınca eşleşmelerin yanlış olduğu farkedilmiştir.
 Örnek sayısına göre yeni eşleşmeler 
-1= pityriasis rubra pilaris,
-2=cronic dermatitis,
-3=pityriasis rosea,
-4=lichen planus,
-5=seboreic dermatitis,
-6= psoriasis,                şeklinde olmuştur.
++ 1= pityriasis rubra pilaris,
++ 2=cronic dermatitis,
++ 3=pityriasis rosea,
++ 4=lichen planus,
++ 5=seboreic dermatitis,
++ 6= psoriasis  ,           şeklinde olmuştur.
