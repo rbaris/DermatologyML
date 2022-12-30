@@ -42,6 +42,7 @@ dataDescription = data.describe()
 # df.at[265, 'Age'] = 36
 # df.at[266, 'Age'] = 36
 # df.at[267, 'Age'] = 36
+
 #disease = {1= pityriasis rubra pilaris,2=cronic dermatitis,3=pityriasis rosea,
 #...4=lichen planus,5=seboreic dermatitis ,6= psoriasis}
 

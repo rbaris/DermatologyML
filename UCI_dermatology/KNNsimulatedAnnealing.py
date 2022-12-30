@@ -38,7 +38,6 @@ a = data
 # Changing column names of x dataframe with 0 and 1
 c = np.random.random(34) > 0.5
 c = c.astype(int).astype(str)
-
 a.columns = c
 
 
@@ -65,7 +64,7 @@ def get_neighbors(a):
 # y is target to predicited
 def get_cost(x,y):
     
-    x_train, x_test, y_train, y_test = train_test_split(X,Y,test_size = 0.3)
+    x_train, x_test, y_train, y_test = train_test_split(x,y,test_size = 0.3)
     modelKNN = KNeighborsClassifier(n_neighbors=3,metric="euclidean")
     modelKNN.fit(x_train, y_train)
     y_pred = modelKNN.predict(x_test)
@@ -78,10 +77,11 @@ def get_cost(x,y):
 def simulated_annealing(param, initial_state, Y):
     """Peforms simulated annealing to find a solution"""
     
-    
+    scores = list()
+    bestscores =list()
     initial_temp = 100
     final_temp = 0
-    alpha = 1
+    alpha = 4
     
     current_temp = initial_temp
 
@@ -96,6 +96,7 @@ def simulated_annealing(param, initial_state, Y):
         # Check if neighbor is best so far
         cost_diff = get_cost(neighbor,Y)
         print(f"{i} . iterasyonda isabet oranı :",cost_diff)
+        scores.append(cost_diff)
       
         if cost_diff < math.exp(cost_diff / current_temp):
             solution = cost_diff
@@ -105,10 +106,22 @@ def simulated_annealing(param, initial_state, Y):
         
         if solution > bestSolution:
             bestSolution = solution
+            bestscores.append(bestSolution)
             
-    return bestSolution
+    return bestSolution,scores,bestscores
 
 
-print("Simulated Annealing(Benzetilmiş Tavlama) Optimizasyonu Sonrası İsabet Oranı :", simulated_annealing(a, acc , Y))
+bestSolution, scores,bestScores = simulated_annealing(a,acc,Y)
+print("Simulated Annealing(Benzetilmiş Tavlama) Optimizasyonu Sonrası İsabet Oranı :", bestSolution)
 print("Simulated Annealing Özellik Seçimi:\n",a.columns)
 print("Optimizasyon öncesi isabet oranı:\n",classification_report(y_test,y_pred))
+
+a = plt.stem(scores,bottom=0.75,markerfmt=("D"))
+plt.plot(bestScores)
+
+#a = plt.plot(scores,".-",bestScores,".-")
+plt.title("K-Nearest Neighbours")
+plt.xlabel('İterasyon')
+plt.ylabel('İsabet Oranı')
+plt.legend(["bestScores","scores"],loc='lower right')
+plt.show()
